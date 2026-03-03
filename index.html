@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Li Fanwei | Academic Homepage</title>
+  <title>黎凡玮 · Darrick Li | Academic Homepage</title>
   <style>
     :root { --fg:#111; --muted:#666; --line:#e5e5e5; --bg:#fff; }
     body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0}
-    .wrap{max-width:860px;margin:0 auto;padding:28px 20px 60px}
+    .wrap{max-width:900px;margin:0 auto;padding:28px 20px 60px}
     header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
     h1{font-size:28px;margin:0}
     .sub{color:var(--muted);margin-top:6px}
@@ -19,7 +19,10 @@
     section{margin:28px 0}
     h2{font-size:20px;margin:0 0 12px}
     p,li{line-height:1.65}
+    ul{padding-left:20px}
+    .loading{color:var(--muted);font-style:italic}
     footer{color:var(--muted);font-size:13px;margin-top:42px;border-top:1px solid var(--line);padding-top:16px}
+    .small{font-size:13px;color:var(--muted)}
   </style>
 </head>
 <body>
@@ -46,7 +49,7 @@
 
     <section id="home">
       <h2 data-i18n="home_h">Home</h2>
-      <p data-i18n="home_p">I work across distributed systems, blockchain, AI, and quant research. This is my academic-focused homepage.</p>
+      <div id="home-content" class="loading">Loading from markdown...</div>
     </section>
 
     <section id="research">
@@ -55,24 +58,22 @@
         <li data-i18n="research_1">Mechanism design in digital asset markets and platform economics</li>
         <li data-i18n="research_2">Distributed systems and blockchain security</li>
         <li data-i18n="research_3">AI agents and automation systems</li>
-              <li>X: <a href="https://x.com/li_darrick" target="_blank">@li_darrick</a></li>
-        <li>Zhihu: <a href="https://www.zhihu.com/people/bu-kao-di-yi-bu-gai-ming-86" target="_blank">Profile</a></li>
       </ul>
     </section>
 
     <section id="projects">
       <h2 data-i18n="projects_h">Projects</h2>
-      <p data-i18n="projects_p">Selected research and engineering projects are listed here, including DeFi agent systems and market mechanism work.</p>
+      <div id="projects-content" class="loading">Loading from markdown...</div>
     </section>
 
     <section id="notes">
       <h2 data-i18n="notes_h">Notes</h2>
-      <p data-i18n="notes_p">Public notes are organized by categories, with Zhihu as the main external channel.</p>
+      <div id="notes-content" class="loading">Loading from markdown...</div>
     </section>
 
     <section id="cv">
       <h2 data-i18n="cv_h">CV</h2>
-      <p data-i18n="cv_p">CV 下载：<a href="assets/cv-zh.pdf" target="_blank">中文</a> / <a href="assets/cv-en.pdf" target="_blank">English</a></p>
+      <p id="cv-text">CV: <a href="assets/cv-zh.pdf" target="_blank">Chinese</a> / <a href="assets/cv-en.pdf" target="_blank">English</a></p>
     </section>
 
     <section id="contact">
@@ -80,11 +81,14 @@
       <ul>
         <li>Email: <a href="mailto:lfwyzdys@stu.xjtu.edu.cn">lfwyzdys@stu.xjtu.edu.cn</a></li>
         <li>GitHub: <a href="https://github.com/DarrickLi" target="_blank">github.com/DarrickLi</a></li>
+        <li>X: <a href="https://x.com/li_darrick" target="_blank">@li_darrick</a></li>
+        <li>Zhihu: <a href="https://www.zhihu.com/people/bu-kao-di-yi-bu-gai-ming-86" target="_blank">Profile</a></li>
       </ul>
     </section>
 
     <footer>
-      <span id="updated">Last updated: 2026-03-03</span>
+      <span id="updated">Last updated: 2026-03-04</span>
+      <div class="small">Sections Home / Projects / Notes are auto-loaded from markdown files in <code>content/{lang}/</code>.</div>
     </footer>
   </div>
 
@@ -92,36 +96,105 @@
     const i18n = {
       en: {
         nav_home:'Home',nav_research:'Research',nav_projects:'Projects',nav_notes:'Notes',nav_cv:'CV',nav_contact:'Contact',
-        home_h:'Home',home_p:'I work across distributed systems, blockchain, AI, and quant research. This is my academic-focused homepage.',
-        research_h:'Research',research_1:'Mechanism design in digital asset markets and platform economics',research_2:'Distributed systems and blockchain security',research_3:'AI agents and automation systems',
-        projects_h:'Projects',projects_p:'Selected research and engineering projects are listed here, including DeFi agent systems and market mechanism work.',
-        notes_h:'Notes',notes_p:'Public notes are organized by categories, with Zhihu as the main external channel.',
-        cv_h:'CV',cv_p:'CV 下载：<a href="assets/cv-zh.pdf" target="_blank">中文</a> / <a href="assets/cv-en.pdf" target="_blank">English</a>',
-        contact_h:'Contact'
+        home_h:'Home',research_h:'Research',projects_h:'Projects',notes_h:'Notes',cv_h:'CV',contact_h:'Contact',
+        research_1:'Mechanism design in digital asset markets and platform economics',
+        research_2:'Distributed systems and blockchain security',
+        research_3:'AI agents and automation systems',
       },
       zh: {
         nav_home:'主页',nav_research:'研究',nav_projects:'项目',nav_notes:'笔记',nav_cv:'简历',nav_contact:'联系',
-        home_h:'主页',home_p:'我专注于分布式系统、区块链、AI 与量化研究的交叉方向。这个站点是我的学术向个人主页。',
-        research_h:'研究方向',research_1:'数字资产市场与平台经济中的机制设计',research_2:'分布式系统与区块链安全',research_3:'AI Agent 与自动化系统',
-        projects_h:'项目',projects_p:'这里已整理科研与工程项目，包括 DeFi Agent 与市场机制相关工作。',
-        notes_h:'笔记',notes_p:'笔记板块按主题分类，外部主阵地为知乎。',
-        cv_h:'简历',cv_p:'简历下载：<a href="assets/cv.pdf" target="_blank">PDF</a>（请替换为你的最新简历）。',
-        contact_h:'联系'
+        home_h:'主页',research_h:'研究方向',projects_h:'项目',notes_h:'笔记',cv_h:'简历',contact_h:'联系',
+        research_1:'数字资产市场与平台经济中的机制设计',
+        research_2:'分布式系统与区块链安全',
+        research_3:'AI Agent 与自动化系统',
       }
     };
+
+    function mdToHtml(md){
+      const lines = md.split('\n');
+      let html = '';
+      let inList = false;
+
+      const closeList = () => {
+        if (inList) {
+          html += '</ul>';
+          inList = false;
+        }
+      };
+
+      for (let raw of lines) {
+        let line = raw.trim();
+        if (!line) { closeList(); continue; }
+
+        // headings
+        if (line.startsWith('### ')) { closeList(); html += `<h4>${escapeHtml(line.slice(4))}</h4>`; continue; }
+        if (line.startsWith('## ')) { closeList(); html += `<h3>${escapeHtml(line.slice(3))}</h3>`; continue; }
+        if (line.startsWith('# '))  { closeList(); html += `<h3>${escapeHtml(line.slice(2))}</h3>`; continue; }
+
+        // list
+        if (line.startsWith('- ')) {
+          if (!inList) { html += '<ul>'; inList = true; }
+          html += `<li>${inlineFormat(line.slice(2))}</li>`;
+          continue;
+        }
+
+        closeList();
+        html += `<p>${inlineFormat(line)}</p>`;
+      }
+      closeList();
+      return html;
+    }
+
+    function escapeHtml(s){
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function inlineFormat(s){
+      const escaped = escapeHtml(s);
+      return escaped
+        .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
+        .replace(/`([^`]+)`/g,'<code>$1</code>')
+        .replace(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g,'<a href="$2" target="_blank">$1</a>')
+        .replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank">$1</a>');
+    }
+
+    async function loadMarkdown(lang){
+      const map = {
+        home: `content/${lang}/profile.md`,
+        projects: `content/${lang}/projects.md`,
+        notes: `content/${lang}/notes.md`
+      };
+
+      for (const [key, path] of Object.entries(map)) {
+        const el = document.getElementById(`${key}-content`);
+        try {
+          const res = await fetch(path, { cache: 'no-store' });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const md = await res.text();
+          el.classList.remove('loading');
+          el.innerHTML = mdToHtml(md);
+        } catch (err) {
+          el.classList.remove('loading');
+          el.innerHTML = `<p>Failed to load <code>${path}</code>.</p>`;
+        }
+      }
+    }
 
     function setLang(lang){
       document.querySelectorAll('[data-i18n]').forEach(el=>{
         const key = el.getAttribute('data-i18n');
-        if (i18n[lang][key]) {
-          if (key === 'cv_p') el.innerHTML = i18n[lang][key];
-          else el.textContent = i18n[lang][key];
-        }
+        if (i18n[lang][key]) el.textContent = i18n[lang][key];
       });
+
+      document.getElementById('cv-text').innerHTML = lang === 'zh'
+        ? 'CV 下载：<a href="assets/cv-zh.pdf" target="_blank">中文</a> / <a href="assets/cv-en.pdf" target="_blank">English</a>'
+        : 'CV: <a href="assets/cv-zh.pdf" target="_blank">Chinese</a> / <a href="assets/cv-en.pdf" target="_blank">English</a>';
+
       document.documentElement.lang = lang;
       document.getElementById('btn-en').classList.toggle('active', lang==='en');
       document.getElementById('btn-zh').classList.toggle('active', lang==='zh');
       localStorage.setItem('lang', lang);
+      loadMarkdown(lang);
     }
 
     document.getElementById('btn-en').addEventListener('click', ()=>setLang('en'));
