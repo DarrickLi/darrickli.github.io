@@ -1,53 +1,81 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>黎凡玮 · Darrick Li | Academic Homepage</title>
   <style>
-    :root { --fg:#111; --muted:#666; --line:#e5e5e5; --bg:#fff; }
-    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--fg);margin:0}
-    .wrap{max-width:900px;margin:0 auto;padding:28px 20px 60px}
-    header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-    h1{font-size:28px;margin:0}
-    .sub{color:var(--muted);margin-top:6px}
-    nav{display:flex;gap:14px;flex-wrap:wrap;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:18px 0}
-    nav a{color:var(--fg);text-decoration:none}
-    nav a:hover{text-decoration:underline}
-    .lang button{border:1px solid var(--line);background:#fff;padding:6px 10px;border-radius:8px;cursor:pointer}
-    .lang button.active{background:#111;color:#fff}
-    section{margin:28px 0}
-    h2{font-size:20px;margin:0 0 12px}
-    p,li{line-height:1.65}
-    ul{padding-left:20px}
+    :root{
+      --bg:#fafafa; --card:#ffffff; --fg:#121826; --muted:#5e6472; --line:#e7e9ee; --accent:#2f4f8f;
+      --shadow:0 8px 30px rgba(17,24,39,.06);
+    }
+    html[data-theme="dark"]{
+      --bg:#0b1020; --card:#121a30; --fg:#e6eaf2; --muted:#aab4c8; --line:#26314f; --accent:#8eb4ff;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.65}
+    .wrap{max-width:1000px;margin:0 auto;padding:28px 20px 64px}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+    .controls{display:flex;gap:8px}
+    .btn{border:1px solid var(--line);background:var(--card);color:var(--fg);padding:7px 10px;border-radius:10px;cursor:pointer}
+    .btn.active{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+    .hero{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+    .avatar{width:160px;height:160px;border-radius:16px;object-fit:cover;border:1px solid var(--line)}
+    h1{margin:0;font-size:32px;letter-spacing:.2px}
+    .sub{color:var(--muted);margin-top:8px}
+    .inst{margin-top:6px;font-size:14px;color:var(--accent);font-weight:600}
+    nav{display:flex;gap:14px;flex-wrap:wrap;padding:14px 0;border-bottom:1px solid var(--line);margin:16px 0 8px}
+    nav a{text-decoration:none;color:var(--fg);padding:4px 0}
+    nav a:hover{color:var(--accent)}
+    section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:16px;box-shadow:var(--shadow)}
+    h2{margin:0 0 10px;font-size:22px}
+    h3{margin:12px 0 6px;font-size:18px}
+    p,li{font-size:15px}
+    ul{margin:8px 0 0 20px;padding:0}
     .loading{color:var(--muted);font-style:italic}
-    footer{color:var(--muted);font-size:13px;margin-top:42px;border-top:1px solid var(--line);padding-top:16px}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
     .small{font-size:13px;color:var(--muted)}
+    code{background:rgba(127,127,127,.12);padding:1px 6px;border-radius:6px}
+    footer{margin-top:20px;color:var(--muted);font-size:13px}
+    @media (max-width:760px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      .avatar{margin:0 auto}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
+    <div class="topbar">
+      <div class="small">Academic Homepage · bilingual · markdown-driven</div>
+      <div class="controls">
+        <button id="btn-en" class="btn active">EN</button>
+        <button id="btn-zh" class="btn">中文</button>
+        <button id="btn-theme" class="btn">🌙 Dark</button>
+      </div>
+    </div>
+
+    <div class="hero" id="home">
+      <img class="avatar" src="assets/photos/avatar.jpeg" alt="Darrick Li" />
       <div>
-        <h1 id="name">黎凡玮 · Darrick Li</h1>
+        <h1>黎凡玮 · Darrick Li</h1>
         <div class="sub" id="title">PhD · Distributed Systems · Blockchain · AI · Quant</div>
+        <div class="inst">Xi'an Jiaotong University</div>
       </div>
-      <div class="lang">
-        <button id="btn-en" class="active">EN</button>
-        <button id="btn-zh">中文</button>
-      </div>
-    </header>
+    </div>
 
     <nav>
       <a href="#home" data-i18n="nav_home">Home</a>
       <a href="#research" data-i18n="nav_research">Research</a>
       <a href="#projects" data-i18n="nav_projects">Projects</a>
       <a href="#notes" data-i18n="nav_notes">Notes</a>
+      <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
       <a href="#cv" data-i18n="nav_cv">CV</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </nav>
 
-    <section id="home">
+    <section>
       <h2 data-i18n="home_h">Home</h2>
       <div id="home-content" class="loading">Loading from markdown...</div>
     </section>
@@ -71,6 +99,17 @@
       <div id="notes-content" class="loading">Loading from markdown...</div>
     </section>
 
+    <section id="gallery">
+      <h2 data-i18n="gallery_h">Gallery</h2>
+      <div class="gallery">
+        <img src="assets/photos/life1.jpeg" alt="Life photo 1" loading="lazy" />
+        <img src="assets/photos/life2.jpeg" alt="Life photo 2" loading="lazy" />
+        <img src="assets/photos/life3.jpeg" alt="Life photo 3" loading="lazy" />
+        <img src="assets/photos/life4.jpeg" alt="Life photo 4" loading="lazy" />
+      </div>
+      <div class="small" data-i18n="gallery_desc">A minimal personal gallery to keep the page warm but still academic.</div>
+    </section>
+
     <section id="cv">
       <h2 data-i18n="cv_h">CV</h2>
       <p id="cv-text">CV: <a href="assets/cv-zh.pdf" target="_blank">Chinese</a> / <a href="assets/cv-en.pdf" target="_blank">English</a></p>
@@ -87,118 +126,85 @@
     </section>
 
     <footer>
-      <span id="updated">Last updated: 2026-03-04</span>
-      <div class="small">Sections Home / Projects / Notes are auto-loaded from markdown files in <code>content/{lang}/</code>.</div>
+      <div>Last updated: 2026-03-04</div>
+      <div class="small">Home / Projects / Notes auto-loaded from <code>content/{lang}/</code> markdown files.</div>
     </footer>
   </div>
 
   <script>
     const i18n = {
       en: {
-        nav_home:'Home',nav_research:'Research',nav_projects:'Projects',nav_notes:'Notes',nav_cv:'CV',nav_contact:'Contact',
-        home_h:'Home',research_h:'Research',projects_h:'Projects',notes_h:'Notes',cv_h:'CV',contact_h:'Contact',
+        nav_home:'Home',nav_research:'Research',nav_projects:'Projects',nav_notes:'Notes',nav_gallery:'Gallery',nav_cv:'CV',nav_contact:'Contact',
+        home_h:'Home',research_h:'Research',projects_h:'Projects',notes_h:'Notes',gallery_h:'Gallery',cv_h:'CV',contact_h:'Contact',
         research_1:'Mechanism design in digital asset markets and platform economics',
         research_2:'Distributed systems and blockchain security',
         research_3:'AI agents and automation systems',
+        gallery_desc:'A minimal personal gallery to keep the page warm but still academic.'
       },
       zh: {
-        nav_home:'主页',nav_research:'研究',nav_projects:'项目',nav_notes:'笔记',nav_cv:'简历',nav_contact:'联系',
-        home_h:'主页',research_h:'研究方向',projects_h:'项目',notes_h:'笔记',cv_h:'简历',contact_h:'联系',
+        nav_home:'主页',nav_research:'研究',nav_projects:'项目',nav_notes:'笔记',nav_gallery:'照片',nav_cv:'简历',nav_contact:'联系',
+        home_h:'主页',research_h:'研究方向',projects_h:'项目',notes_h:'笔记',gallery_h:'照片',cv_h:'简历',contact_h:'联系',
         research_1:'数字资产市场与平台经济中的机制设计',
         research_2:'分布式系统与区块链安全',
         research_3:'AI Agent 与自动化系统',
+        gallery_desc:'简洁生活照模块，增强个人气质，同时保持学术主页风格。'
       }
     };
 
+    function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    function inline(s){
+      const e=esc(s);
+      return e.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
+              .replace(/`([^`]+)`/g,'<code>$1</code>')
+              .replace(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g,'<a href="$2" target="_blank">$1</a>')
+              .replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank">$1</a>');
+    }
     function mdToHtml(md){
-      const lines = md.split('\n');
-      let html = '';
-      let inList = false;
-
-      const closeList = () => {
-        if (inList) {
-          html += '</ul>';
-          inList = false;
-        }
-      };
-
-      for (let raw of lines) {
-        let line = raw.trim();
-        if (!line) { closeList(); continue; }
-
-        // headings
-        if (line.startsWith('### ')) { closeList(); html += `<h4>${escapeHtml(line.slice(4))}</h4>`; continue; }
-        if (line.startsWith('## ')) { closeList(); html += `<h3>${escapeHtml(line.slice(3))}</h3>`; continue; }
-        if (line.startsWith('# '))  { closeList(); html += `<h3>${escapeHtml(line.slice(2))}</h3>`; continue; }
-
-        // list
-        if (line.startsWith('- ')) {
-          if (!inList) { html += '<ul>'; inList = true; }
-          html += `<li>${inlineFormat(line.slice(2))}</li>`;
-          continue;
-        }
-
-        closeList();
-        html += `<p>${inlineFormat(line)}</p>`;
-      }
-      closeList();
-      return html;
-    }
-
-    function escapeHtml(s){
-      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    }
-
-    function inlineFormat(s){
-      const escaped = escapeHtml(s);
-      return escaped
-        .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
-        .replace(/`([^`]+)`/g,'<code>$1</code>')
-        .replace(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g,'<a href="$2" target="_blank">$1</a>')
-        .replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank">$1</a>');
+      const lines=md.split('\n'); let html='',inList=false;
+      const close=()=>{ if(inList){html+='</ul>';inList=false;} };
+      for(let l of lines){ l=l.trim(); if(!l){close(); continue;}
+        if(l.startsWith('### ')){close();html+=`<h4>${esc(l.slice(4))}</h4>`;continue;}
+        if(l.startsWith('## ')){close();html+=`<h3>${esc(l.slice(3))}</h3>`;continue;}
+        if(l.startsWith('# ')){close();html+=`<h3>${esc(l.slice(2))}</h3>`;continue;}
+        if(l.startsWith('- ')){ if(!inList){html+='<ul>';inList=true;} html+=`<li>${inline(l.slice(2))}</li>`; continue;}
+        close(); html+=`<p>${inline(l)}</p>`;
+      } close(); return html;
     }
 
     async function loadMarkdown(lang){
-      const map = {
-        home: `content/${lang}/profile.md`,
-        projects: `content/${lang}/projects.md`,
-        notes: `content/${lang}/notes.md`
-      };
-
-      for (const [key, path] of Object.entries(map)) {
-        const el = document.getElementById(`${key}-content`);
-        try {
-          const res = await fetch(path, { cache: 'no-store' });
-          if (!res.ok) throw new Error(`HTTP ${res.status}`);
-          const md = await res.text();
-          el.classList.remove('loading');
-          el.innerHTML = mdToHtml(md);
-        } catch (err) {
-          el.classList.remove('loading');
-          el.innerHTML = `<p>Failed to load <code>${path}</code>.</p>`;
-        }
+      const map={home:`content/${lang}/profile.md`,projects:`content/${lang}/projects.md`,notes:`content/${lang}/notes.md`};
+      for(const [k,path] of Object.entries(map)){
+        const el=document.getElementById(`${k}-content`);
+        try{ const r=await fetch(path,{cache:'no-store'}); if(!r.ok) throw new Error(r.status);
+          el.classList.remove('loading'); el.innerHTML=mdToHtml(await r.text());
+        }catch(e){ el.classList.remove('loading'); el.innerHTML=`<p>Failed to load <code>${path}</code>.</p>`; }
       }
     }
 
     function setLang(lang){
-      document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const key = el.getAttribute('data-i18n');
-        if (i18n[lang][key]) el.textContent = i18n[lang][key];
-      });
-
-      document.getElementById('cv-text').innerHTML = lang === 'zh'
+      document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(i18n[lang][k]) el.textContent=i18n[lang][k];});
+      document.getElementById('btn-en').classList.toggle('active',lang==='en');
+      document.getElementById('btn-zh').classList.toggle('active',lang==='zh');
+      document.getElementById('cv-text').innerHTML = lang==='zh'
         ? 'CV 下载：<a href="assets/cv-zh.pdf" target="_blank">中文</a> / <a href="assets/cv-en.pdf" target="_blank">English</a>'
         : 'CV: <a href="assets/cv-zh.pdf" target="_blank">Chinese</a> / <a href="assets/cv-en.pdf" target="_blank">English</a>';
-
-      document.documentElement.lang = lang;
-      document.getElementById('btn-en').classList.toggle('active', lang==='en');
-      document.getElementById('btn-zh').classList.toggle('active', lang==='zh');
-      localStorage.setItem('lang', lang);
-      loadMarkdown(lang);
+      localStorage.setItem('lang',lang); loadMarkdown(lang);
     }
 
-    document.getElementById('btn-en').addEventListener('click', ()=>setLang('en'));
-    document.getElementById('btn-zh').addEventListener('click', ()=>setLang('zh'));
+    function setTheme(theme){
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme',theme);
+      document.getElementById('btn-theme').textContent = theme==='dark' ? '☀️ Light' : '🌙 Dark';
+    }
+
+    document.getElementById('btn-en').onclick=()=>setLang('en');
+    document.getElementById('btn-zh').onclick=()=>setLang('zh');
+    document.getElementById('btn-theme').onclick=()=>{
+      const cur=document.documentElement.getAttribute('data-theme')||'light';
+      setTheme(cur==='light'?'dark':'light');
+    };
+
+    setTheme(localStorage.getItem('theme') || 'light');
     setLang(localStorage.getItem('lang') || 'en');
   </script>
 </body>
