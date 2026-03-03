@@ -5,7 +5,7 @@ Academic-focused bilingual GitHub Pages site for Darrick Li.
 ## Structure
 
 - `index.html` - single-page bilingual site (EN/ZH)
-- `assets/cv.pdf` - your CV PDF (replace this)
+- `assets/cv-zh.pdf / assets/cv-en.pdf` - your CV PDF (replace this)
 - `content/` - optional markdown drafts for future extension
 
 ## Publish (GitHub Pages)
