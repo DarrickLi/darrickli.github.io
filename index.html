@@ -6,36 +6,38 @@
   <title>黎凡玮 · Darrick Li | Academic Homepage</title>
   <style>
     :root{
-      --bg:#fafafa; --card:#ffffff; --fg:#121826; --muted:#5e6472; --line:#e7e9ee; --accent:#2f4f8f;
+      --bg:#f5f7fb; --card:#ffffff; --fg:#111827; --muted:#5b6478; --line:#e3e8f2; --accent:#3b5bdb; --accent2:#0ea5e9; --soft:#eef3ff;
       --shadow:0 8px 30px rgba(17,24,39,.06);
     }
     html[data-theme="dark"]{
-      --bg:#0b1020; --card:#121a30; --fg:#e6eaf2; --muted:#aab4c8; --line:#26314f; --accent:#8eb4ff;
+      --bg:#0a1022; --card:#121a30; --fg:#e8ecf7; --muted:#aab6d1; --line:#2b3960; --accent:#8fb2ff; --accent2:#67e8f9; --soft:#13213f;
       --shadow:0 10px 30px rgba(0,0,0,.35);
     }
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.65}
+    body{margin:0;background:radial-gradient(circle at 10% 0%, var(--soft), transparent 35%), var(--bg);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.65}
     .wrap{max-width:1000px;margin:0 auto;padding:28px 20px 64px}
     .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
     .controls{display:flex;gap:8px}
     .btn{border:1px solid var(--line);background:var(--card);color:var(--fg);padding:7px 10px;border-radius:10px;cursor:pointer}
-    .btn.active{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-    .hero{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+    .btn.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-color:transparent}
+    .hero{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;background:linear-gradient(135deg,var(--card) 0%, color-mix(in oklab, var(--soft) 35%, var(--card)) 100%);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
     .avatar{width:160px;height:160px;border-radius:16px;object-fit:cover;border:1px solid var(--line)}
     h1{margin:0;font-size:32px;letter-spacing:.2px}
     .sub{color:var(--muted);margin-top:8px}
     .inst{margin-top:6px;font-size:14px;color:var(--accent);font-weight:600}
     nav{display:flex;gap:14px;flex-wrap:wrap;padding:14px 0;border-bottom:1px solid var(--line);margin:16px 0 8px}
-    nav a{text-decoration:none;color:var(--fg);padding:4px 0}
-    nav a:hover{color:var(--accent)}
-    section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:16px;box-shadow:var(--shadow)}
+    nav a{text-decoration:none;color:var(--fg);padding:4px 0;border-bottom:2px solid transparent}
+    nav a:hover{color:var(--accent);border-bottom-color:var(--accent2)}
+    section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    section::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:.85}
     h2{margin:0 0 10px;font-size:22px}
     h3{margin:12px 0 6px;font-size:18px}
     p,li{font-size:15px}
     ul{margin:8px 0 0 20px;padding:0}
     .loading{color:var(--muted);font-style:italic}
     .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid var(--line);transition:transform .25s ease, box-shadow .25s ease}
+    .gallery img:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(59,91,219,.22)}
     .small{font-size:13px;color:var(--muted)}
     code{background:rgba(127,127,127,.12);padding:1px 6px;border-radius:6px}
     footer{margin-top:20px;color:var(--muted);font-size:13px}
