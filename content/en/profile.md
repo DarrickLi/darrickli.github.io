@@ -1,18 +1,5 @@
-# Profile (EN)
+I entered **Xi’an Jiaotong University’s Young Gifted Class at 14** and began my **PhD at 21**. My undergraduate training was in quantitative economics and finance; my interests now extend to computer science, AI agents, and blockchain. I care about what a system can do, and how its rules shape the behavior of its participants.
 
-**Fanwei Li (Darrick Li)** is affiliated with Xi'an Jiaotong University. His interests lie at the intersection of **Distributed Systems, Blockchain, AI, and Quantitative Finance**.
+**AI is part of how I work every day.** I use it to support paper reading, problem decomposition, coding, and debugging. I am also building Nash, a local assistant system with long-term memory, task context, and reusable workflows. I focus on supplying useful context and checking outputs against sources, reasoning, and actual execution.
 
-He is currently focusing on mechanism design in digital asset markets, especially how a three-layer framework—**randomized auction, exchange, and secondary resale**—affects allocation efficiency, platform revenue, and speculative behavior.
-
-Long term, he aims to build research and engineering outputs in **Distributed Systems × Blockchain × AI × DeFi × Quant**.
-
-## Collaboration
-- Research collaborations (mechanism design, digital asset markets, carbon-economy topics)
-- Trading / quant research collaboration
-- AI/Web3/Agent startup exploration
-
-## Contact
-- Email: lfwyzdys@stu.xjtu.edu.cn
-- GitHub: https://github.com/DarrickLi
-- X (Twitter): https://x.com/li_darrick
-- Zhihu: https://www.zhihu.com/people/bu-kao-di-yi-bu-gai-ming-86
+I am particularly interested in **authorization, incentives, and verifiability** as agents enter economic activity. I want to bring a mechanism-design perspective to agent systems, and turn questions into models, code, and experiments that others can inspect.

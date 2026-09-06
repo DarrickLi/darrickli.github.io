@@ -1,24 +1,27 @@
-# Projects (EN)
+## Oraclient
 
-## 1) Oraclient — AI Agent for DeFi (Chainlink Chromion Hackathon)
-- Time: 2025.06 – 2025.07
-- Role: Team Lead / Smart Contract Developer
-- Summary: Built an ElizaOS-based DeFi agent that aggregates on-chain and oracle data for pricing/liquidity/lending queries and on-chain actions.
-- Tech: Avalanche, Chainlink Functions, ERC20, Solidity, AI Agent
+AI × DeFi / Hackathon prototype
 
-## 2) Multi-layer Mechanism Design in Digital Asset Markets (Thesis Track)
-- Time: 2025 – 2026 (ongoing)
-- Summary: Studies a three-layer framework (randomized auction, exchange, secondary market) and its impact on strategic behavior, efficiency, and platform revenue.
-- Methods: mechanism design, auction theory, equilibrium modeling, numerical solution
+Team lead and smart-contract developer at the 2025 Chainlink Chromion Hackathon. Built with ElizaOS, Avalanche, and Chainlink Functions to explore natural-language interaction, DeFi data queries, and on-chain actions.
 
-## 3) Coordinated Governance for Pollution and Carbon Reduction in Shaanxi
-- Time: 2024.07 – Present
-- Summary: Built synergy evaluation indices and assessed policy effects with empirical evidence.
+An exploratory prototype. Reliable wallet execution, live data, and recovery from errors remain areas for further validation.
 
-## 4) China “Carbon” Index: Market, Finance, and Technology
-- Time: 2023.09 – Present
-- Summary: Examines dynamic spillovers among carbon, fossil energy, financial, and new-energy markets.
+[Explore the project ↗](https://github.com/DarrickLi/Oraclient-Ai-Agent-for-DeFi)
 
-## 5) Green Low-Carbon Pathways for Xi’an Industries under Dual-Carbon Strategy
-- Time: 2023.09 – 2023.12
-- Summary: Proposed sector-specific transition pathways and policy supports.
+## Nash
+
+Personal AI assistant / In progress
+
+A local AI working system: long-term memory for context and decisions, short-term memory for daily execution, and reusable workflows. Code and research materials stay in their own project workspaces.
+
+The aim is continuity across tasks, with clear constraints and explicit criteria for checking results.
+
+Private local project · Not publicly released
+
+## XJTU Thesis Toolkit
+
+LaTeX / Open-source tool
+
+An unofficial undergraduate thesis template and format-conversion toolkit for Xi’an Jiaotong University. Built from a real writing need to make thesis formatting reusable.
+
+[Explore the toolkit ↗](https://github.com/DarrickLi/xjtu-undergraduate-thesis-template)

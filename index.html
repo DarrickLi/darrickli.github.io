@@ -1,213 +1,398 @@
 <!doctype html>
-<html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>黎凡玮 · Darrick Li | Academic Homepage</title>
-  <style>
-    :root{
-      --bg:#f5f7fb; --card:#ffffff; --fg:#111827; --muted:#5b6478; --line:#e3e8f2; --accent:#3b5bdb; --accent2:#0ea5e9; --soft:#eef3ff;
-      --shadow:0 8px 30px rgba(17,24,39,.06);
-    }
-    html[data-theme="dark"]{
-      --bg:#0a1022; --card:#121a30; --fg:#e8ecf7; --muted:#aab6d1; --line:#2b3960; --accent:#8fb2ff; --accent2:#67e8f9; --soft:#13213f;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:radial-gradient(circle at 10% 0%, var(--soft), transparent 35%), var(--bg);color:var(--fg);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.65}
-    .wrap{max-width:1000px;margin:0 auto;padding:28px 20px 64px}
-    .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
-    .controls{display:flex;gap:8px}
-    .btn{border:1px solid var(--line);background:var(--card);color:var(--fg);padding:7px 10px;border-radius:10px;cursor:pointer}
-    .btn.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-color:transparent}
-    .hero{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center;background:linear-gradient(135deg,var(--card) 0%, color-mix(in oklab, var(--soft) 35%, var(--card)) 100%);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
-    .avatar{width:160px;height:160px;border-radius:16px;object-fit:cover;border:1px solid var(--line)}
-    h1{margin:0;font-size:32px;letter-spacing:.2px}
-    .sub{color:var(--muted);margin-top:8px}
-    .inst{margin-top:6px;font-size:14px;color:var(--accent);font-weight:600}
-    nav{display:flex;gap:14px;flex-wrap:wrap;padding:14px 0;border-bottom:1px solid var(--line);margin:16px 0 8px}
-    nav a{text-decoration:none;color:var(--fg);padding:4px 0;border-bottom:2px solid transparent}
-    nav a:hover{color:var(--accent);border-bottom-color:var(--accent2)}
-    section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-    section::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:.85}
-    h2{margin:0 0 10px;font-size:22px}
-    h3{margin:12px 0 6px;font-size:18px}
-    p,li{font-size:15px}
-    ul{margin:8px 0 0 20px;padding:0}
-    .loading{color:var(--muted);font-style:italic}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid var(--line);transition:transform .25s ease, box-shadow .25s ease}
-    .gallery img:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(59,91,219,.22)}
-    .small{font-size:13px;color:var(--muted)}
-    code{background:rgba(127,127,127,.12);padding:1px 6px;border-radius:6px}
-    footer{margin-top:20px;color:var(--muted);font-size:13px}
-    @media (max-width:760px){
-      .hero{grid-template-columns:1fr; text-align:center}
-      .avatar{margin:0 auto}
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="topbar">
-      <div class="small">Academic Homepage · bilingual · markdown-driven</div>
-      <div class="controls">
-        <button id="btn-en" class="btn active">EN</button>
-        <button id="btn-zh" class="btn">中文</button>
-        <button id="btn-theme" class="btn">🌙 Dark</button>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="黎凡玮 Darrick Li，西安交通大学博士生。少年班出身，14 岁上大学，21 岁读博。探索 AI Agent、机制设计与区块链，构建可以被验证的研究与系统。"
+    />
+    <meta
+      property="og:title"
+      content="黎凡玮 · Darrick Li — Research & Build"
+    />
+    <meta
+      property="og:description"
+      content="AI agents, mechanism design, and the systems that connect them. Research and projects by Darrick Li."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://darrickli.github.io/" />
+    <meta
+      property="og:image"
+      content="https://darrickli.github.io/assets/photos/avatar.jpeg"
+    />
+    <meta name="theme-color" content="#f5f4ee" />
+    <link rel="canonical" href="https://darrickli.github.io/" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/site.css" />
+    <title>黎凡玮 · Darrick Li — Research & Build</title>
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip">跳转到正文</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="wordmark" href="#home" aria-label="Darrick Li · Home"
+          >darrick<span class="wordmark-dot">.</span></a
+        >
+        <nav aria-label="Main navigation">
+          <a href="#research" data-i18n="nav_research">研究</a
+          ><a href="#projects" data-i18n="nav_projects">项目</a
+          ><a href="#notes" data-i18n="nav_notes">笔记</a
+          ><a href="#contact" data-i18n="nav_contact">联系</a>
+        </nav>
+        <div class="controls">
+          <button id="btn-zh" aria-pressed="true" lang="zh-CN">中</button
+          ><span class="control-divider" aria-hidden="true">/</span
+          ><button id="btn-en" aria-pressed="false" lang="en">EN</button
+          ><button
+            id="btn-theme"
+            class="theme-toggle"
+            aria-label="切换到深色模式"
+            title="切换到深色模式"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="8" />
+              <path
+                d="M12 4a8 8 0 0 1 0 16Z"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
-
-    <div class="hero" id="home">
-      <img class="avatar" src="assets/photos/avatar.jpeg" alt="Darrick Li" />
-      <div>
-        <h1>黎凡玮 · Darrick Li</h1>
-        <div class="sub" id="title">PhD · Distributed Systems · Blockchain · AI · Quant</div>
-        <div class="inst">Xi'an Jiaotong University</div>
+    </header>
+    <main id="main" class="wrap">
+      <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot" aria-hidden="true"></span
+            ><span data-i18n="affiliation">西安交通大学 · 博士生</span>
+          </p>
+          <h1 id="hero-title">
+            <span data-i18n="name">黎凡玮</span
+            ><span class="name-secondary" data-i18n="name_secondary"
+              >Darrick Li</span
+            >
+          </h1>
+          <p class="hero-statement" data-i18n="hero_statement">
+            理解智能，设计规则，<br />把想法做成系统。
+          </p>
+          <p class="hero-description" data-i18n="hero_description">
+            从数量经济与金融出发，探索 AI
+            Agent、机制设计与区块链的交叉。关心智能体如何行动，也关心支撑行动的激励、权限与信任。
+          </p>
+          <div class="hero-links">
+            <a class="button primary" href="#research"
+              ><span data-i18n="explore">探索我的研究</span
+              ><span aria-hidden="true">↗</span></a
+            ><a
+              class="text-link"
+              href="https://github.com/DarrickLi"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+        <aside class="portrait-block" aria-label="Darrick Li">
+          <div class="portrait-mat">
+            <span class="portrait-corner" aria-hidden="true">DL / 01</span
+            ><img
+              src="assets/photos/avatar.jpeg"
+              width="420"
+              height="510"
+              alt="黎凡玮 Darrick Li"
+              fetchpriority="high"
+            /><span class="portrait-caption">A CURIOUS MIND, AT WORK.</span>
+          </div>
+          <div class="portrait-note">
+            <span data-i18n="portrait_note"
+              >研究者的好奇心，构建者的行动力。</span
+            ><span aria-hidden="true">↗</span>
+          </div>
+        </aside>
+      </section>
+      <div class="journey" aria-label="Education and interests">
+        <div>
+          <span class="journey-number">14<span data-i18n="age">岁</span></span>
+          <p data-i18n="journey_14">少年班 · 进入大学</p>
+        </div>
+        <div>
+          <span class="journey-number">21<span data-i18n="age">岁</span></span>
+          <p data-i18n="journey_21">开启博士阶段</p>
+        </div>
+        <div class="journey-direction">
+          <span class="small-label" data-i18n="journey_label"
+            >持续探索的交叉点</span
+          >
+          <p>ECONOMICS <span>×</span> AI <span>×</span> SYSTEMS</p>
+        </div>
       </div>
-    </div>
-
-    <nav>
-      <a href="#home" data-i18n="nav_home">Home</a>
-      <a href="#research" data-i18n="nav_research">Research</a>
-      <a href="#projects" data-i18n="nav_projects">Projects</a>
-      <a href="#notes" data-i18n="nav_notes">Notes</a>
-      <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
-      <a href="#cv" data-i18n="nav_cv">CV</a>
-      <a href="#contact" data-i18n="nav_contact">Contact</a>
-    </nav>
-
-    <section>
-      <h2 data-i18n="home_h">Home</h2>
-      <div id="home-content" class="loading">Loading from markdown...</div>
-    </section>
-
-    <section id="research">
-      <h2 data-i18n="research_h">Research</h2>
-      <ul>
-        <li data-i18n="research_1">Mechanism design in digital asset markets and platform economics</li>
-        <li data-i18n="research_2">Distributed systems and blockchain security</li>
-        <li data-i18n="research_3">AI agents and automation systems</li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h2 data-i18n="projects_h">Projects</h2>
-      <div id="projects-content" class="loading">Loading from markdown...</div>
-    </section>
-
-    <section id="notes">
-      <h2 data-i18n="notes_h">Notes</h2>
-      <div id="notes-content" class="loading">Loading from markdown...</div>
-    </section>
-
-    <section id="gallery">
-      <h2 data-i18n="gallery_h">Gallery</h2>
-      <div class="gallery">
-        <img src="assets/photos/life1.jpeg" alt="Life photo 1" loading="lazy" />
-        <img src="assets/photos/life2.jpeg" alt="Life photo 2" loading="lazy" />
-        <img src="assets/photos/life3.jpeg" alt="Life photo 3" loading="lazy" />
-        <img src="assets/photos/life4.jpeg" alt="Life photo 4" loading="lazy" />
-      </div>
-      <div class="small" data-i18n="gallery_desc">A minimal personal gallery to keep the page warm but still academic.</div>
-    </section>
-
-    <section id="cv">
-      <h2 data-i18n="cv_h">CV</h2>
-      <p id="cv-text">CV: <a href="assets/cv-zh.pdf" target="_blank">Chinese</a> / <a href="assets/cv-en.pdf" target="_blank">English</a></p>
-    </section>
-
-    <section id="contact">
-      <h2 data-i18n="contact_h">Contact</h2>
-      <ul>
-        <li>Email: <a href="mailto:lfwyzdys@stu.xjtu.edu.cn">lfwyzdys@stu.xjtu.edu.cn</a></li>
-        <li>GitHub: <a href="https://github.com/DarrickLi" target="_blank">github.com/DarrickLi</a></li>
-        <li>X: <a href="https://x.com/li_darrick" target="_blank">@li_darrick</a></li>
-        <li>Zhihu: <a href="https://www.zhihu.com/people/bu-kao-di-yi-bu-gai-ming-86" target="_blank">Profile</a></li>
-      </ul>
-    </section>
-
-    <footer>
-      <div>Last updated: 2026-03-04</div>
-      <div class="small">Home / Projects / Notes auto-loaded from <code>content/{lang}/</code> markdown files.</div>
-    </footer>
-  </div>
-
-  <script>
-    const i18n = {
-      en: {
-        nav_home:'Home',nav_research:'Research',nav_projects:'Projects',nav_notes:'Notes',nav_gallery:'Gallery',nav_cv:'CV',nav_contact:'Contact',
-        home_h:'Home',research_h:'Research',projects_h:'Projects',notes_h:'Notes',gallery_h:'Gallery',cv_h:'CV',contact_h:'Contact',
-        research_1:'Mechanism design in digital asset markets and platform economics',
-        research_2:'Distributed systems and blockchain security',
-        research_3:'AI agents and automation systems',
-        gallery_desc:'A minimal personal gallery to keep the page warm but still academic.'
-      },
-      zh: {
-        nav_home:'主页',nav_research:'研究',nav_projects:'项目',nav_notes:'笔记',nav_gallery:'照片',nav_cv:'简历',nav_contact:'联系',
-        home_h:'主页',research_h:'研究方向',projects_h:'项目',notes_h:'笔记',gallery_h:'照片',cv_h:'简历',contact_h:'联系',
-        research_1:'数字资产市场与平台经济中的机制设计',
-        research_2:'分布式系统与区块链安全',
-        research_3:'AI Agent 与自动化系统',
-        gallery_desc:'简洁生活照模块，增强个人气质，同时保持学术主页风格。'
-      }
-    };
-
-    function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-    function inline(s){
-      const e=esc(s);
-      return e.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
-              .replace(/`([^`]+)`/g,'<code>$1</code>')
-              .replace(/\[(.*?)\]\((https?:\/\/[^\s)]+)\)/g,'<a href="$2" target="_blank">$1</a>')
-              .replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank">$1</a>');
-    }
-    function mdToHtml(md){
-      const lines=md.split('\n'); let html='',inList=false;
-      const close=()=>{ if(inList){html+='</ul>';inList=false;} };
-      for(let l of lines){ l=l.trim(); if(!l){close(); continue;}
-        if(l.startsWith('### ')){close();html+=`<h4>${esc(l.slice(4))}</h4>`;continue;}
-        if(l.startsWith('## ')){close();html+=`<h3>${esc(l.slice(3))}</h3>`;continue;}
-        if(l.startsWith('# ')){close();html+=`<h3>${esc(l.slice(2))}</h3>`;continue;}
-        if(l.startsWith('- ')){ if(!inList){html+='<ul>';inList=true;} html+=`<li>${inline(l.slice(2))}</li>`; continue;}
-        close(); html+=`<p>${inline(l)}</p>`;
-      } close(); return html;
-    }
-
-    async function loadMarkdown(lang){
-      const map={home:`content/${lang}/profile.md`,projects:`content/${lang}/projects.md`,notes:`content/${lang}/notes.md`};
-      for(const [k,path] of Object.entries(map)){
-        const el=document.getElementById(`${k}-content`);
-        try{ const r=await fetch(path,{cache:'no-store'}); if(!r.ok) throw new Error(r.status);
-          el.classList.remove('loading'); el.innerHTML=mdToHtml(await r.text());
-        }catch(e){ el.classList.remove('loading'); el.innerHTML=`<p>Failed to load <code>${path}</code>.</p>`; }
-      }
-    }
-
-    function setLang(lang){
-      document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(i18n[lang][k]) el.textContent=i18n[lang][k];});
-      document.getElementById('btn-en').classList.toggle('active',lang==='en');
-      document.getElementById('btn-zh').classList.toggle('active',lang==='zh');
-      document.getElementById('cv-text').innerHTML = lang==='zh'
-        ? 'CV 下载：<a href="assets/cv-zh.pdf" target="_blank">中文</a> / <a href="assets/cv-en.pdf" target="_blank">English</a>'
-        : 'CV: <a href="assets/cv-zh.pdf" target="_blank">Chinese</a> / <a href="assets/cv-en.pdf" target="_blank">English</a>';
-      localStorage.setItem('lang',lang); loadMarkdown(lang);
-    }
-
-    function setTheme(theme){
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme',theme);
-      document.getElementById('btn-theme').textContent = theme==='dark' ? '☀️ Light' : '🌙 Dark';
-    }
-
-    document.getElementById('btn-en').onclick=()=>setLang('en');
-    document.getElementById('btn-zh').onclick=()=>setLang('zh');
-    document.getElementById('btn-theme').onclick=()=>{
-      const cur=document.documentElement.getAttribute('data-theme')||'light';
-      setTheme(cur==='light'?'dark':'light');
-    };
-
-    setTheme(localStorage.getItem('theme') || 'light');
-    setLang(localStorage.getItem('lang') || 'en');
-  </script>
-</body>
+      <section class="section about-section" aria-labelledby="about-heading">
+        <div class="section-label">
+          <span class="index">01 / ABOUT</span>
+          <h2 id="about-heading" data-i18n="about_heading">
+            保持好奇，<br />持续构建。
+          </h2>
+        </div>
+        <div id="home-content" class="prose">
+          <p>
+            我来自西安交通大学少年班，14 岁上大学，21
+            岁开始读博。本科接受数量经济与金融训练，现在将研究兴趣延伸到计算机、AI
+            Agent 与区块链。
+          </p>
+          <p>
+            我关注技术能力与机制规则怎样共同塑造系统行为，并通过理论分析、代码和实验推进这些问题。
+          </p>
+        </div>
+      </section>
+      <section id="research" class="section" aria-labelledby="research-heading">
+        <div class="section-heading">
+          <div>
+            <span class="index">02 / SELECTED RESEARCH</span>
+            <h2 id="research-heading" data-i18n="research_heading">
+              从问题出发，用研究回答。
+            </h2>
+          </div>
+          <span class="section-aside" data-i18n="research_aside"
+            >机制设计 · 数值实验 · 可复现</span
+          >
+        </div>
+        <article class="featured-research">
+          <div class="research-visual" aria-hidden="true">
+            <div class="diagram-topline">
+              <span>MECHANISM STUDY</span><span>2025—2026</span>
+            </div>
+            <div class="mechanism-diagram">
+              <div class="diagram-node node-primary">
+                <span class="node-index">01</span
+                ><span data-i18n="diagram_1">随机化拍卖</span
+                ><small>ALLOCATION</small>
+              </div>
+              <div class="diagram-connector">
+                <span>↓</span><span data-i18n="diagram_info">信息披露</span>
+              </div>
+              <div class="diagram-node">
+                <span class="node-index">02</span
+                ><span data-i18n="diagram_2">平台中介转售</span
+                ><small>RESALE</small>
+              </div>
+              <div class="diagram-connector">
+                <span>↓</span><span data-i18n="diagram_value">延续价值</span>
+              </div>
+              <div class="diagram-node">
+                <span class="node-index">03</span
+                ><span data-i18n="diagram_3">官方兑换</span
+                ><small>EXCHANGE</small>
+              </div>
+            </div>
+            <div class="diagram-bottomline">
+              <span>INCENTIVES · INFORMATION · VALUE</span><span>↗</span>
+            </div>
+          </div>
+          <div class="research-copy">
+            <p class="small-label" data-i18n="thesis_label">
+              本科毕业论文 / 已公开
+            </p>
+            <h3 data-i18n="thesis_title">
+              随机化拍卖、官方兑换与<br />平台中介转售的联合机制设计
+            </h3>
+            <p data-i18n="thesis_description">
+              用户会考虑商品能否转售或兑换，这些后续规则又会改变最初的支付意愿。我把随机分配、信息披露、转售与兑换纳入同一框架，研究平台如何联合设计机制。
+            </p>
+            <div class="research-findings">
+              <div>
+                <strong>3 × 3</strong
+                ><span data-i18n="finding_1">市场场景 × 披露制度</span>
+              </div>
+              <div>
+                <strong>23 / 24</strong
+                ><span data-i18n="finding_2"
+                  >环境组合呈现部分披露利润最高的排序</span
+                >
+              </div>
+            </div>
+            <p class="research-boundary" data-i18n="thesis_boundary">
+              结论来自所设机制族与蒙特卡洛实验，不是适用于任意市场的一般性定理。
+            </p>
+            <div class="research-links">
+              <a
+                href="https://github.com/DarrickLi/auction-exchange-resale-thesis"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-link"
+                ><span data-i18n="thesis_repo">代码与复现</span> ↗</a
+              ><a
+                href="https://github.com/DarrickLi/auction-exchange-resale-thesis/blob/main/paper/joint-mechanism-design-thesis.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-link"
+                ><span data-i18n="thesis_pdf">阅读论文</span> ↗</a
+              >
+            </div>
+          </div>
+        </article>
+        <div class="research-interests">
+          <span data-i18n="interests_label">也在关注</span>
+          <p data-i18n="interests">
+            可信 Agent 与权限控制 / 分布式系统与区块链 / 数字资产与市场机制
+          </p>
+        </div>
+      </section>
+      <section id="projects" class="section" aria-labelledby="projects-heading">
+        <div class="section-heading">
+          <div>
+            <span class="index">03 / THINGS I BUILD</span>
+            <h2 id="projects-heading" data-i18n="projects_heading">
+              让想法接受现实检验。
+            </h2>
+          </div>
+          <a
+            class="text-link"
+            href="https://github.com/DarrickLi?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="all_projects"
+            >全部公开项目 ↗</a
+          >
+        </div>
+        <div id="projects-content" class="project-grid" aria-live="polite">
+          <p data-i18n="content_loading">正在载入项目…</p>
+        </div>
+      </section>
+      <section
+        id="notes"
+        class="section notes-section"
+        aria-labelledby="notes-heading"
+      >
+        <div class="section-label">
+          <span class="index">04 / LEARNING IN PUBLIC</span>
+          <h2 id="notes-heading" data-i18n="notes_heading">把学习留下来。</h2>
+          <p data-i18n="notes_intro">记录理解，也保留仍在探索的问题。</p>
+        </div>
+        <div id="notes-content" class="prose">
+          <p>
+            <a href="https://www.zhihu.com/people/bu-kao-di-yi-bu-gai-ming-86"
+              >知乎 ↗</a
+            >
+            ·
+            <a href="https://github.com/DarrickLi/ai-web3-school-cohort-0"
+              >AI × Web3 ↗</a
+            >
+          </p>
+        </div>
+      </section>
+      <section id="gallery" class="section" aria-labelledby="gallery-heading">
+        <div class="section-heading">
+          <div>
+            <span class="index">05 / BEYOND THE SCREEN</span>
+            <h2 id="gallery-heading" data-i18n="gallery_heading">屏幕之外。</h2>
+          </div>
+          <span class="section-aside" data-i18n="gallery_aside"
+            >生活中的一些切片</span
+          >
+        </div>
+        <div class="gallery">
+          <img
+            src="assets/photos/life1.jpeg"
+            alt="Darrick 的生活照片 1"
+            loading="lazy"
+            width="600"
+            height="480"
+          /><img
+            src="assets/photos/life2.jpeg"
+            alt="Darrick 的生活照片 2"
+            loading="lazy"
+            width="600"
+            height="480"
+          /><img
+            src="assets/photos/life3.jpeg"
+            alt="Darrick 的生活照片 3"
+            loading="lazy"
+            width="600"
+            height="480"
+          /><img
+            src="assets/photos/life4.jpeg"
+            alt="Darrick 的生活照片 4"
+            loading="lazy"
+            width="600"
+            height="480"
+          />
+        </div>
+      </section>
+      <section
+        id="contact"
+        class="contact-section"
+        aria-labelledby="contact-heading"
+      >
+        <div>
+          <span class="index">LET’S CONNECT</span>
+          <h2 id="contact-heading" data-i18n="contact_heading">
+            好问题，值得一起探索。
+          </h2>
+          <p data-i18n="contact_description">
+            欢迎交流 AI Agent、机制设计、Web3，以及值得动手做的想法。
+          </p>
+          <a class="email-link" href="mailto:lfwyzdys@stu.xjtu.edu.cn"
+            >lfwyzdys@stu.xjtu.edu.cn <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="contact-links">
+          <a
+            href="https://github.com/DarrickLi"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub ↗</a
+          ><a
+            href="https://x.com/li_darrick"
+            target="_blank"
+            rel="noopener noreferrer"
+            >X / Twitter ↗</a
+          ><a
+            href="https://www.zhihu.com/people/bu-kao-di-yi-bu-gai-ming-86"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="zhihu"
+            >知乎 ↗</a
+          >
+          <div id="cv">
+            <span class="small-label" data-i18n="cv_label">简历 PDF</span
+            ><a
+              href="assets/cv-zh.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              >中文 ↗</a
+            ><a
+              href="assets/cv-en.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              >English ↗</a
+            >
+          </div>
+        </div>
+      </section>
+      <footer>
+        <span>© 2026 Darrick Li</span
+        ><span data-i18n="updated">最近更新 · 2026 年 9 月</span
+        ><a href="#home" data-i18n="back_top">回到顶部 ↑</a>
+      </footer>
+    </main>
+    <noscript
+      ><p class="noscript">
+        完整项目与双语切换需要 JavaScript。You can also explore my work on
+        <a href="https://github.com/DarrickLi">GitHub</a>.
+      </p></noscript
+    >
+  </body>
 </html>

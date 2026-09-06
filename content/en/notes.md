@@ -1,13 +1,15 @@
-# Notes (EN)
+## AI × Web3 learning notes
 
-## Zhihu
-- Main page: https://www.zhihu.com/people/bu-kao-di-yi-bu-gai-ming-86
+A public learning repository on AI, blockchain, and agents. Course notes and explorations help me work through the connections between agents and on-chain systems.
 
-## Suggested Categories
-1. Mechanism Design & Auction Theory
-2. Blockchain / DeFi Mechanisms
-3. Distributed Systems Engineering
-4. AI Agents & Automation
-5. Quant Research & Trading Notes
+[Browse the learning repository ↗](https://github.com/DarrickLi/ai-web3-school-cohort-0)
 
-These categories will be used to organize public notes over time.
+## Ideas & writing
+
+I share learning and reflections on Zhihu, with an ongoing interest in mechanism design, AI agents, blockchain, and quantitative research.
+
+[Read on Zhihu ↗](https://www.zhihu.com/people/bu-kao-di-yi-bu-gai-ming-86)
+
+## Earlier research experience
+
+I have also contributed to research on carbon-market risk transmission, coordinated pollution and carbon reduction in Shaanxi, and green industrial development in Xi’an. These experiences inform my economics-led perspective on systems.
